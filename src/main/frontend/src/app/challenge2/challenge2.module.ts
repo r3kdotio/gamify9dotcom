@@ -7,6 +7,7 @@ import { MyCommonModule } from '../shared/mycommon.module';
 
 import { Challenge2RoutingModule } from './challenge2-routing.module';
 import { Challenge2Service } from './challenge2.service';
+import { Challenge2Component } from './challenge2.component';
 
 import { GameEngineDesktopComponent } from './gameenginedesktop.component';
 import { CompileWithModuleDirComponent } from './compilewithmoduledir.component';
@@ -21,6 +22,7 @@ import { GameEngineEmptyModuleComponent } from './gameengineemptymodule.componen
     MyCommonModule
   ],
   declarations: [
+    Challenge2Component,
     GameEngineDesktopComponent,
     CompileWithModuleDirComponent,
     CompileWithoutModuleDirComponent,

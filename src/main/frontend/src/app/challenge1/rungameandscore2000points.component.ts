@@ -35,7 +35,7 @@ export class RunGameandScore2000PointsComponent extends BaseChallengeComponent{
    super();
   }
 
-  submitJavaVersion(input){
+  submit(input){
     console.info("Submit "+input);
     this.challenge1Service.runGameAndScore2000Points(input).subscribe(res => this.evaluateResponse(res), error => { this.error(error) });
   }
