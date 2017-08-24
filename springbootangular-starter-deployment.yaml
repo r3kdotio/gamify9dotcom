@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: springbootreact-starter-deployment
+spec:
+  replicas: 2
+  template: # create pods using pod definition in this template
+    metadata:
+      labels:
+        app: springbootreactjs-starter-deployment
+    spec:
+      containers:
+      - name: r3kio-springbootreactjs-starter-deployment
+        image: r3kdotio/springbootreactjs-starter:latest
+        ports:
+        - containerPort: 8080
+        
+

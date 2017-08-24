@@ -1,0 +1,8 @@
+#spring:
+    #profiles.active: staging
+    
+spring.jpa.hibernate.ddl-auto: create
+
+com.auth0.domain: gamify9.auth0.com
+com.auth0.clientId: 4xWiJnaIoWtecofOdVGKdrrDWEPIc3eo
+com.auth0.clientSecret: 7moy0iwjFiKcWiVBVXYWPIRRhsmAQuaCg1yieRZ_CfowiVbmdKpX8JFsg3tdifFr

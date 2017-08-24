@@ -1,0 +1,59 @@
+<header class="app-header navbar">
+    <button class="navbar-toggler d-lg-none" type="button" appMobileSidebarToggler>&#9776;</button>
+    <a class="navbar-brand" href="#"></a>
+    <ul class="nav navbar-nav mr-auto d-md-down-none">
+        <li class="nav-item">
+            <a class="nav-link navbar-toggler" href="#" appSidebarToggler>&#9776;</a>
+        </li>
+
+
+
+
+
+    </ul>
+</header>
+<a class="github-fork-ribbon" href="https://url.to-your.repo" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
+<div class="app-body">
+    <div class="sidebar">
+        <nav class="sidebar-nav">
+            <ul class="nav">
+                <li *ngIf="auth.isAuthenticated()">
+                    You are logged in!
+                    <button (click)="auth.logout()" type="button" class="btn btn-primary">Logout</button>
+
+                </li>
+                <li *ngIf="!auth.isAuthenticated()">
+                    <button (click)="auth.login()" type="button" class="btn btn-primary">Login</button>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active" [routerLink]="['/challenge1']"><i class="icon-speedometer"></i>Challenge1</a>
+                    <a class="nav-link" routerLinkActive="active" [routerLink]="['/challenge2']"><i class="icon-speedometer"></i>Challenge2</a>
+                    <a class="nav-link" routerLinkActive="active" [routerLink]="['/dashboard']"><i class="icon-speedometer"></i>Dashboard</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Main content -->
+    <main class="main">
+
+        <!-- Breadcrumb -->
+        <ol class="breadcrumb">
+            <app-breadcrumbs></app-breadcrumbs>
+        </ol>
+
+        <div class="container-fluid">
+            <router-outlet></router-outlet>
+        </div>
+        <!-- /.conainer-fluid -->
+    </main>
+
+
+</div>
+
+<footer class="app-footer">
+    <a href="https://gamify9.com">Gamify9.com</a>
+    <span class="float-right">This hackathon is powered by the OpenJDK 9 (build 181)
+    </span>
+</footer>

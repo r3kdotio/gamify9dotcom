@@ -1,0 +1,41 @@
+<div class="animated fadeIn">
+Create the two Java source files and run the below command using Java 9
+
+
+
+    <div class="card">
+        <div class="card-header">
+            create com.gamify9.gameengine/com/gamify9/gameengine/GameEngine.java
+        </div>
+        <div class="card-body">
+            <prism-hack-block [code]="gameEngine" [language]="'java'"></prism-hack-block>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                create com.gamify9.gameengine/com/gamify9/gameengine/score/GameScore.java
+            </div>
+            <div class="card-body">
+                <prism-hack-block [code]="gameScore" [language]="'java'"></prism-hack-block>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                compile
+            </div>
+            <div class="card-body">
+                <prism-hack-block [code]="compile" [language]="'java'"></prism-hack-block>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                challenge
+            </div>
+            <div class="card-body">
+                <prism-hack-block [code]="challenge" [language]="'java'"></prism-hack-block>
+            </div>
+        </div>
+        <div>
+            <textarea #input class="form-control" rows="3"></textarea>
+            <button (click)="submit(input.value)" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
