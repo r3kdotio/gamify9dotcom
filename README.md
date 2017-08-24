@@ -1,18 +1,15 @@
 # Description
-CoreUI React.js + Spring boot
+Gamify9.com = Java 9 + Spring boot + Angular
 
 ## Docker
 ### Build
-mvn clean package docker:build
+mvn clean package
 
 ### Pull
-docker pull r3kdotio/springbootangular-starter
+docker pull r3kdotio/gamify9dotcom
 
 ## Run
-docker run -p 8080:8080 r3kdotio/springbootangular-starter
+docker run -p 8080:8080 r3kdotio/gamify9dotcom
 
-## Kubernetes
-kubectl create -f springbootangular-starter-deployment.yaml
-kubectl expose deployment springbootreactjs-starter-deployment
 
 
