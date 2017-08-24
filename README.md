@@ -9,7 +9,8 @@ mvn clean package
 docker pull r3kdotio/gamify9dotcom
 
 ## Run
-docker run -p 8080:8080 r3kdotio/gamify9dotcom
+sudo docker create --name=website -v /etc/letsencrypt/live/gamify9.com:/etc/certs/ -e "SPRING_PROFILES_ACTIVE=production" r3kdotio/gamify9dotcom:1.0.0-SNAPSHOT
+
 
 
 

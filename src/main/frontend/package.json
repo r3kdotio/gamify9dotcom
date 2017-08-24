@@ -10,6 +10,7 @@
     "ng": "ng",
     "start": "ng serve --proxy-config springbootproxy.json",
     "build": "ng build --output-path=../../../target/classes/static",
+    "buildprod": "ng build --prod --env=prod --output-path=../../../target/classes/static",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

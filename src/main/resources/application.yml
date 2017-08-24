@@ -1,8 +1,40 @@
 #spring:
     #profiles.active: staging
     
+
+
+
+spring:
+  profiles.active: local
+---
+spring:
+  profiles: local
+
 spring.jpa.hibernate.ddl-auto: create
 
 com.auth0.domain: gamify9.auth0.com
 com.auth0.clientId: 4xWiJnaIoWtecofOdVGKdrrDWEPIc3eo
 com.auth0.clientSecret: 7moy0iwjFiKcWiVBVXYWPIRRhsmAQuaCg1yieRZ_CfowiVbmdKpX8JFsg3tdifFr
+
+---
+spring:
+  profiles: production
+#  datasource:
+#    url: jdbc:sqlite:/db/gamify9dotcom.db
+#    driverClassName: org.sqlite.JDBC
+
+#spring.jpa.hibernate :
+#               ddl-auto: create
+#               dialect: org.hibernate.dialect.SQLiteDialect
+com.auth0.domain: gamify9.auth0.com
+com.auth0.clientId: 4xWiJnaIoWtecofOdVGKdrrDWEPIc3eo
+com.auth0.clientSecret: 7moy0iwjFiKcWiVBVXYWPIRRhsmAQuaCg1yieRZ_CfowiVbmdKpX8JFsg3tdifFr
+
+server.port: 8443
+security.require-ssl: true
+server.ssl.key-store: /etc/certs/keystore.p12
+server.ssl.keyStoreType: pkcs12
+#May the Lords of Kobol forgive me, my password is password
+server.ssl.key-store-password: password
+server.ssl.key-password: password
+

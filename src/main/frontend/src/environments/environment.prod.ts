@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  callbackURL: 'https://gamify9.com/callback'
 };
