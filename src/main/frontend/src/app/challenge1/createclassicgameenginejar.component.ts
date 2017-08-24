@@ -1,3 +1,4 @@
+import { BaseChallengeComponent } from '../shared/basechallenge.component';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth/auth.service';
@@ -7,7 +8,7 @@ import { Challenge1Service } from './challenge1.service';
 @Component({
   templateUrl: 'createclassicgameenginejar.component.html'
 })
-export class CreateClassicGameEngineJarComponent {
+export class CreateClassicGameEngineJarComponent extends BaseChallengeComponent {
 
 
   challenge = 'jar -d --file=oldstylejars/gameengine-1.0.0.jar';
@@ -235,11 +236,13 @@ public class GameEngine {
 }
 `;
 
-  constructor(private challenge1Service: Challenge1Service) {}
+  constructor(private challenge1Service: Challenge1Service) {
+    super();
+  }
 
   submit(input) {
     console.info("Submit " + input);
-    this.challenge1Service.createClassicGameEngineJar(input).subscribe(res => console.log(res));;
+    this.challenge1Service.createClassicGameEngineJar(input).subscribe(res => this.evaluateResponse(res), error => { this.error(error) });
   }
 
 }

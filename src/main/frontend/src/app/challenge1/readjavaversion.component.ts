@@ -1,8 +1,10 @@
+import { BaseChallengeComponent } from '../shared/basechallenge.component';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth/auth.service';
-
+import { Response } from '@angular/http';
 import { Challenge1Service } from './challenge1.service';
+
 
 @Component({
   template: `
@@ -39,11 +41,19 @@ import { Challenge1Service } from './challenge1.service';
         </div>
     <div>
         <textarea #input class="form-control" rows="3"></textarea>
-        <button (click)="submit(input.value)" class="btn btn-primary">Submit</button>
+        <button *ngIf="!successs" (click)="submit(input.value)" class="btn btn-primary">Submit</button>
     </div>
+    
+    <button *ngIf="successs" type="button" class="btn btn-success">Success</button>
+    <div *ngIf="errorMessage" class="alert alert-danger">
+      <strong>Error!</strong>{{errorMessage}}
+    </div>
+
+
 </div>`
 })
-export class ReadJavaVersionComponent {
+export class ReadJavaVersionComponent extends BaseChallengeComponent {
+
 
   createStructureBash = `mkdir oldstylejars
 mkdir 3rdparty
@@ -56,12 +66,12 @@ cp jpct-1.jar 3rdparty
 
 
   constructor(private challenge1Service: Challenge1Service) {
-
+    super();
   }
 
   submit(input) {
     console.info("submit " + input);
-    this.challenge1Service.submitJavaVersion(input).subscribe(res => console.log(res));;
+    this.challenge1Service.submitJavaVersion(input).subscribe(res => this.evaluateResponse(res), error => { this.error(error) });
   }
 
 }
