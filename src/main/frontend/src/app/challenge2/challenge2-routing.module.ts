@@ -19,10 +19,10 @@ const routes: Routes = [
     },
     children: [
       {
-        path: '5',
+        path: '3',
         component: GameEngineDesktopComponent,
         data: {
-          title: '5 Game Engine Desktop'
+          title: '3 Game Engine Desktop'
         }
       },
       {
@@ -33,10 +33,10 @@ const routes: Routes = [
         }
       },
       {
-        path: '3',
+        path: '5',
         component: CompileWithoutModuleDirComponent,
         data: {
-          title: '3 Compile Without Module Dir'
+          title: '5 Compile Without Module Dir'
         }
       },
       {

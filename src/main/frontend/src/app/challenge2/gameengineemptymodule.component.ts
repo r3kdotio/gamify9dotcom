@@ -9,7 +9,7 @@ import { Challenge2Service } from './challenge2.service';
   template: `
 <div class="animated fadeIn">
         <div class="card">
-            <div class="card-header"> 
+        <div class="card-header"> 
         Now let's compile with a empty module-info.java. It's virtually empty, we just export the package com.gamify9.gameengine and not com.gamify9.gameengine.score to stop people 'hacking' our code.<br/>
         You will still get an error.<br/>
         Create the file com.gamify9.gameengine/module-info.java

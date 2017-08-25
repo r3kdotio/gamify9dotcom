@@ -99,7 +99,7 @@ public class CompileGameEngineWithModuleInfoServiceTest {
   }
 
   @Test
-  public void shouldRespondWithSuccessForCompilationErrorMissingJPCTAndLWJGL() {
+  public void shouldRespondWithSuccessForCompilationErrorMissingJPCT() {
     //given
     String givenString = "com.gamify9.gameengine/com/gamify9/gameengine/GameEngine.java:8: error: package com.threed.jpct is not visible\n"
             + "import com.threed.jpct.Camera;\n"
@@ -182,7 +182,7 @@ public class CompileGameEngineWithModuleInfoServiceTest {
 
     //when
     CompileGameEngineWithModuleInfoService underTest = new CompileGameEngineWithModuleInfoService();
-    ResponseEntity<ChallengeReponse> response = underTest.readInputWithModuleInfoDesktop(givenString);
+    ResponseEntity<ChallengeReponse> response = underTest.readInputWithModuleInfoDesktopAndJPCT(givenString);
     //then
     assertNull(response.getBody().getMessage());
     assertEquals(HttpStatus.ACCEPTED, response.getStatusCode());
@@ -200,7 +200,7 @@ public class CompileGameEngineWithModuleInfoServiceTest {
 
     //when
     CompileGameEngineWithModuleInfoService underTest = new CompileGameEngineWithModuleInfoService();
-    ResponseEntity<ChallengeReponse> response = underTest.readInputWithModuleInfoDesktop(givenString);
+    ResponseEntity<ChallengeReponse> response = underTest.readInputWithModuleInfoDesktopAndJPCT(givenString);
     //then
     assertEquals("Compile still contains errors",response.getBody().getMessage());
     assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());

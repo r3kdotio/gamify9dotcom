@@ -10,14 +10,15 @@ import { Challenge2Service } from './challenge2.service';
 <div class="animated fadeIn">
         <div class="card">
             <div class="card-header">
-                compile
+        Let's add "requires java.desktop" to the module-info.java.<br/>
+        You will still get an error.<br/>
             </div>
             <div class="card-body">
-                <prism-hack-block [code]="runGame" [language]="'java'"></prism-hack-block>
+                <prism-hack-block [code]="moduleinfo" [language]="'java'"></prism-hack-block>
             </div>
         </div>
         <div>
-            <textarea #input class="form-control" rows="3"></textarea>
+            <textarea #input class="form-control" rows="6"></textarea>
             <button (click)="submit(input.value)" class="btn btn-primary">Submit</button>
         </div>
         <button *ngIf="successs" type="button" class="btn btn-success">Success</button>
@@ -30,8 +31,13 @@ import { Challenge2Service } from './challenge2.service';
 })
 export class GameEngineDesktopComponent extends BaseChallengeComponent{
   
-  runGame = 'java -classpath 3rdparty/jpct-1.jar:oldstylejars/gameengine-1.0.0.jar:oldstylejars/mygame-1.0.0.jar com.gamify9.mygame.MyGame'
-  
+  moduleinfo =
+`module com.gamify9.gameengine {
+
+  exports com.gamify9.gameengine;
+  requires java.desktop;
+
+}`
   constructor(private challenge1Service: Challenge2Service,private router: Router) {
    super();
   }
