@@ -21,7 +21,7 @@ import { Challenge1Service } from './challenge1.service';
             <button (click)="submit(input.value)" class="btn btn-primary">Submit</button>
         </div>
 
-    <button *ngIf="successs" type="button" class="btn btn-success">Success</button>
+    <button (click)="next()" *ngIf="success" type="button" class="btn btn-success">Success, next challenge</button>
     <div *ngIf="errorMessage" class="alert alert-danger">
       <strong>Error!</strong>{{errorMessage}}
     </div>

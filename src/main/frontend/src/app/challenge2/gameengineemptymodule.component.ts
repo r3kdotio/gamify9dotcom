@@ -30,10 +30,10 @@ import { Challenge2Service } from './challenge2.service';
 
     <div>
         <textarea #input class="form-control" rows="6"></textarea>
-        <button *ngIf="!successs" (click)="submit(input.value)" class="btn btn-primary">Submit</button>
+        <button *ngIf="!success" (click)="submit(input.value)" class="btn btn-primary">Submit</button>
     </div>
     
-    <button (click)="next()" *ngIf="successs" type="button" class="btn btn-success">Success, next challenge</button>
+    <button (click)="next()" *ngIf="success" type="button" class="btn btn-success">Success, next challenge</button>
     <div *ngIf="errorMessage" class="alert alert-danger">
       <strong>Error!</strong>{{errorMessage}}
     </div>

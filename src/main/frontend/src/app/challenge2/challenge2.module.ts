@@ -14,7 +14,7 @@ import { CompileWithModuleDirComponent } from './compilewithmoduledir.component'
 import { CompileWithoutModuleDirComponent } from './compilewithoutmoduledir.component';
 import { GameEngineWithoutModuleInfoComponent } from './gameenginewithoutmoduleinfo.component';
 import { GameEngineEmptyModuleComponent } from './gameengineemptymodule.component';
-
+import { GameEngineDesktopJPCTComponent } from './gameenginedesktopjpct.component';
 
 @NgModule({
   imports: [
@@ -24,6 +24,7 @@ import { GameEngineEmptyModuleComponent } from './gameengineemptymodule.componen
   declarations: [
     Challenge2Component,
     GameEngineDesktopComponent,
+    GameEngineDesktopJPCTComponent,
     CompileWithModuleDirComponent,
     CompileWithoutModuleDirComponent,
     GameEngineWithoutModuleInfoComponent,

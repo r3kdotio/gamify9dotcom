@@ -19,7 +19,10 @@ export class Challenge2Service {
         return this.http.post('/api/challenge2/compilegameenginewithmoduleinfo/readinputwithmoduleinfodesktop', input, { headers: this.headers })
             .map(res => res.json());
     }
-
+    readInputWithModuleInfoDesktopAndJPCT(input: String) {
+        return this.http.post('/api/challenge2/compilegameenginewithmoduleinfo/readinputwithmoduleinfodesktopandjpct', input, { headers: this.headers })
+            .map(res => res.json());
+    }
     compileGameEngineWithoutModuleInfo(input: String) {
         return this.http.post('/api/challenge2/compilegameenginewithoutmoduleinfo', input, { headers: this.headers })
             .map(res => res.json());

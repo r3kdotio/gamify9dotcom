@@ -126,6 +126,20 @@ public class GameEngine {
     world.addObject(cube);
     world.addObject(sphere);
     world.addObject(cube2);
+    
+    sphere.addCollisionListener(new CollisionListener() {
+      @Override
+      public void collision(CollisionEvent ce) {
+        gameScore.scorePoints(1);
+        world.removeObject(sphere);
+      }
+
+      @Override
+      public boolean requiresPolygonIDs() {
+        return true;
+      }
+    });
+    
 
     Light light = new Light(world);
     light.setPosition(new SimpleVector(0, -80, 0));
@@ -226,14 +240,9 @@ public class GameEngine {
     fb.display(g);
   }
 
-  public static void main(String[] args) throws Exception {
-    GameEngine m = new GameEngine();
-    m.loadSwingGUI();
-    m.initGame();
-    m.gameLoop();
-  }
 
 }
+
 `;
 
   constructor(private challenge1Service: Challenge1Service,private router: Router) {

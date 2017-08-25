@@ -4,7 +4,7 @@ import {
   RouterModule
 } from '@angular/router';
 
-
+import { GameEngineDesktopJPCTComponent } from './gameenginedesktopjpct.component'; 
 import { GameEngineDesktopComponent } from './gameenginedesktop.component';
 import { CompileWithModuleDirComponent } from './compilewithmoduledir.component';
 import { CompileWithoutModuleDirComponent } from './compilewithoutmoduledir.component';
@@ -27,16 +27,23 @@ const routes: Routes = [
       },
       {
         path: '4',
-        component: CompileWithModuleDirComponent,
+        component: GameEngineDesktopJPCTComponent,
         data: {
           title: '4 Compile With Module Dir'
         }
       },
       {
         path: '5',
+        component: CompileWithModuleDirComponent,
+        data: {
+          title: '5 Compile With Module Dir'
+        }
+      },
+      {
+        path: '6',
         component: CompileWithoutModuleDirComponent,
         data: {
-          title: '5 Compile Without Module Dir'
+          title: '6 Compile Without Module Dir'
         }
       },
       {
