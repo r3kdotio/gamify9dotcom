@@ -22,7 +22,7 @@ const routes: Routes = [
         path: '1',
         component: ReadJavaVersionComponent,
         data: {
-          title: '1 Read Java Version'
+          title: '1 Check Java Version'
         }
       },
       {

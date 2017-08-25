@@ -5,18 +5,15 @@ import { AuthService } from '../auth/auth.service'
   templateUrl : 'dashboard.component.html'
 })
 export class DashboardComponent {
-  comments = [];
 
-cssCode = 
-`module com.gamify9.gameengine {
-  exports com.gamify9.gameengine.api;
-}
-`;
 
-  constructor(public auth: AuthService) {
-    auth.handleAuthentication();
+
+  constructor(public auth: AuthService,private router: Router) {
+
   }
-
+  go() {
+    this.router.navigate(['./challenge1/1']);
+  }
   
 
 }

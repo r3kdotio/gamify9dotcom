@@ -1,10 +1,12 @@
 package io.r3k.gamify9dotcom.services.challenge2;
 
 import io.r3k.gamify9dotcom.domain.ChallengeReponse;
+import javax.validation.constraints.NotNull;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class CompileMyGameService {
 
   @PostMapping(path = "/compilemygame/compilewithoutmoduledir")
-  public ResponseEntity<ChallengeReponse> compileWithoutModuleDir(String givenString) {
+  public ResponseEntity<ChallengeReponse> compileWithoutModuleDir(@RequestBody @NotNull String givenString) {
     if (givenString.contains("error: module not found: com.gamify9.gameengine")) {
       return new ResponseEntity<>(new ChallengeReponse(), HttpStatus.ACCEPTED);
     } else {
@@ -22,7 +24,7 @@ public class CompileMyGameService {
   }
 
   @PostMapping(path = "/compilemygame/compilewithmoduledir")
-  public ResponseEntity<ChallengeReponse> compileWithModuleDir(String givenString) {
+  public ResponseEntity<ChallengeReponse> compileWithModuleDir(@RequestBody @NotNull String givenString) {
     if (givenString.contains("mods/com.gamify9.mygame")) {
       return new ResponseEntity<>(new ChallengeReponse(), HttpStatus.ACCEPTED);
     } else {

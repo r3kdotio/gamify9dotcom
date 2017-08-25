@@ -15,7 +15,6 @@ import { CreateClassicMyGameJarComponent } from './createclassicmygamejar.compon
 import { CreateClassicGameEngineJarComponent } from './createclassicgameenginejar.component';
 import { Challenge1Component } from './challenge1.component';
 
-
 @NgModule({
   imports: [
     Challenge1RoutingModule,

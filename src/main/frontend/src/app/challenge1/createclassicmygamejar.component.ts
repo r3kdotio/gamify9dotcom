@@ -72,7 +72,7 @@ public class MyGame {
     }
 }`;
 
-  constructor(private challenge1Service: Challenge1Service) {
+  constructor(private challenge1Service: Challenge1Service,private router: Router) {
     super();
   }
 
@@ -80,5 +80,7 @@ public class MyGame {
     console.info("Submit " + input);
     this.challenge1Service.createClassicMyGameJar(input).subscribe(res => this.evaluateResponse(res), error => { this.error(error) });
   }
-
+  next() {
+    this.router.navigate(['./challenge1/4']);
+  }
 }

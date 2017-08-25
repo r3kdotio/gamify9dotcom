@@ -31,7 +31,7 @@ export class RunGameandScore2000PointsComponent extends BaseChallengeComponent{
   runGame = 'java -classpath 3rdparty/jpct-1.jar:oldstylejars/gameengine-1.0.0.jar:oldstylejars/mygame-1.0.0.jar com.gamify9.mygame.MyGame'
 
   
-  constructor(private challenge1Service: Challenge1Service) {
+  constructor(private challenge1Service: Challenge1Service,private router: Router) {
    super();
   }
 
@@ -39,4 +39,9 @@ export class RunGameandScore2000PointsComponent extends BaseChallengeComponent{
     console.info("Submit "+input);
     this.challenge1Service.runGameAndScore2000Points(input).subscribe(res => this.evaluateResponse(res), error => { this.error(error) });
   }
+
+  next() {
+    this.router.navigate(['./challenge2/1']);
+  }
+
 }

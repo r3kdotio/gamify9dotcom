@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/map';
+import { AuthHttp } from 'angular2-jwt';
 
 @Injectable()
 export class Challenge1Service {
     headers = new Headers({
         'Content-Type': 'application/json'
     });
-    constructor(private http: Http) {
+    constructor(private http: Http) {//future, replace with AuthHttp
     }
 
     getScore() {

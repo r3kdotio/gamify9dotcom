@@ -1,12 +1,14 @@
 import { Response } from '@angular/http';
 
 export class BaseChallengeComponent {
-    successs = false;
+    //null means not attemped, true means success, false means failure
+    successs : Boolean;
     errorMessage = null;
 
     evaluateResponse(res: Response) {
         console.info("Success");
         this.successs = true;
+        this.errorMessage = null;
     }
 
     error(error) {

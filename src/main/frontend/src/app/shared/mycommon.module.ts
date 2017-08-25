@@ -9,12 +9,13 @@ import 'prismjs/prism';
 import 'prismjs/components/prism-typescript';
 import 'prismjs/components/prism-java';
 import { PrismHackComponent } from '../shared/prismhack.component';
-
+import { AuthModule } from './auth.module';
 @NgModule({
   imports: [
     ChartsModule,
     CommonModule,
-    HttpModule
+    HttpModule,
+    AuthModule
   ],
   declarations: [ PrismHackComponent ],
   exports: [PrismHackComponent, CommonModule, HttpModule]

@@ -44,7 +44,7 @@ import { Challenge1Service } from './challenge1.service';
         <button *ngIf="!successs" (click)="submit(input.value)" class="btn btn-primary">Submit</button>
     </div>
     
-    <button *ngIf="successs" type="button" class="btn btn-success">Success</button>
+    <button (click)="next()" *ngIf="successs" type="button" class="btn btn-success">Success, next challenge</button>
     <div *ngIf="errorMessage" class="alert alert-danger">
       <strong>Error!</strong>{{errorMessage}}
     </div>
@@ -55,7 +55,8 @@ import { Challenge1Service } from './challenge1.service';
 export class ReadJavaVersionComponent extends BaseChallengeComponent {
 
 
-  createStructureBash = `mkdir oldstylejars
+  createStructureBash = 
+`mkdir oldstylejars
 mkdir 3rdparty
 mkdir -p com.gamify9.gameengine/com/gamify9/gameengine/score/
 mkdir -p com.gamify9.mygame/com/gamify9/mygame/
@@ -65,13 +66,17 @@ cp jpct-1.jar 3rdparty
   soundCheckJava9AndJpct = 'jar -d --file=3rdparty/jpct-1.jar';
 
 
-  constructor(private challenge1Service: Challenge1Service) {
+  constructor(private challenge1Service: Challenge1Service,private router: Router) {
     super();
   }
 
   submit(input) {
     console.info("submit " + input);
     this.challenge1Service.submitJavaVersion(input).subscribe(res => this.evaluateResponse(res), error => { this.error(error) });
+  }
+
+  next() {
+    this.router.navigate(['./challenge1/2']);
   }
 
 }
