@@ -2,9 +2,11 @@ package io.r3k.gamify9dotcom.services.challenge1;
 
 import io.r3k.gamify9dotcom.domain.ChallengeReponse;
 import io.r3k.gamify9dotcom.services.challenge.AbstractChallenge;
+import javax.validation.constraints.NotNull;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,7 +19,7 @@ public class RunGameAndScore2000PointsService extends AbstractChallenge {
   }
 
   @PostMapping(path = "/rungameandscore2000points")
-  public ResponseEntity<ChallengeReponse> readInput(String givenString) {
+  public ResponseEntity<ChallengeReponse> readInput(@RequestBody @NotNull String givenString) {
     if (givenString.contains("Java version is: ")){
       if (!givenString.contains("Java version is: 9")){
         return failure("The game has started, but you are runnning with an old version of Java");

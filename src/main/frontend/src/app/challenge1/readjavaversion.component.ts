@@ -13,12 +13,12 @@ import { Challenge1Service } from './challenge1.service';
     
       <div class="card">
         <div class="card-header">
-          Challenge 1, setup Java 9 and create your hackathon envrionment
+          Challenge 1, setup Java 9 and create your hackathon environment
         </div>
         <div class="card-body">
           Download <a href="/3rdparty/jpct-1.jar" download="jpct-1.jar" target="_blank">jpct-1.jar</a> and place it in a directory on your computer.<br>
           You are not allowed to use an IDE and everything is on the command line.<br>
-          After your envrionment is set up make sure Java 9 is in your PATH and execute the command below.
+          After your environment is set up make sure Java 9 is in your PATH and execute the command below.
           <br><br>
           You will need to submit the result of the command to reach the next step.
         </div>

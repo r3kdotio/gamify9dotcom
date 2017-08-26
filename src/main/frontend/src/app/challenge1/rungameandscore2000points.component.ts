@@ -9,7 +9,7 @@ import { Challenge1Service } from './challenge1.service';
   template: `
 <div class="animated fadeIn">
 
-Now "Hack" the gameengine by getting and instance of the GameScore (GameScore.getInstance()) from MyGame.java 
+Now "Hack" the gameengine by getting an instance of the GameScore (GameScore.getInstance()) from MyGame.java 
 
 This demonstrates unintended access to library class
 
