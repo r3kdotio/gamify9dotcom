@@ -1,6 +1,8 @@
 # Description
 Gamify9.com = Java 9 + Spring boot + Angular
 
+
+## If you want to improve the code do the following...
 ## Docker
 ### Build
 mvn clean package
