@@ -23,6 +23,8 @@ public class GameScore {
     
     private int score = 0;
     
+    private GameScore(){}
+
     public GameScore getInstance(){
         return gameScore;
     }
@@ -73,7 +75,7 @@ public class GameEngine {
 
   JFrame frame = new JFrame();
 
-  private final GameScore gameScore = new GameScore().getInstance();
+  private final GameScore gameScore = GameScore.getInstance();
 
   public void loadSwingGUI() {
     int numberOfProcs = Runtime.getRuntime().availableProcessors();
